@@ -1,4 +1,4 @@
-import path from "path";
+
 import express from "express";
 import { dbConnection } from "./database/dbConnection.js";
 import jobRouter from "./routes/jobRoutes.js";
@@ -13,12 +13,6 @@ import fileUpload from "express-fileupload";
 const app = express();
 config({ path: "./config/config.env" });
 
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname,"/frontend/dist")));
-
-app.get("*" , (req,res)=>{
-  res.sendFile(path.join(__dirname,"frontend","dist","index.html"));
-})
 
 
 app.use(

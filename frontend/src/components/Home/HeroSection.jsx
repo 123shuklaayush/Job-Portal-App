@@ -1,6 +1,8 @@
 import React from "react";
 import { FaBuilding, FaSuitcase, FaUsers, FaUserPlus } from "react-icons/fa";
 
+
+
 const HeroSection = () => {
   const details = [
     {
@@ -42,8 +44,11 @@ const HeroSection = () => {
             </p>
           </div>
           <div className="image">
-            <img src="/heroS.jpg" alt="hero" />
+            <img src="/hero.jpg" alt="hero" />
           </div>
+           
+
+
         </div>
         <div className="details">
           {details.map((element) => {

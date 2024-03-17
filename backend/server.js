@@ -1,14 +1,7 @@
-import path from "path";
+
 import app from "./app.js";
 import cloudinary from "cloudinary";
 
-
-
-const express = require('express');
-const cors = require('cors');
-const app = express();
-// Use CORS middleware
-app.use(cors());
 
 cloudinary.v2.config({
   cloud_name: process.env.CLOUDINARY_CLIENT_NAME,
@@ -21,10 +14,4 @@ app.listen(process.env.PORT, () => {
 });
 
 
-const __dirname = path.resolve();
 
-app.use(express.static(path.join(__dirname,"/frontend/dist")));
-
-app.get("*" , (req,res)=>{
-  res.sendFile(path.join(__dirname,"frontend","dist","index.html"));
-})

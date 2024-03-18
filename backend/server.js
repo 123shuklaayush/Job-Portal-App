@@ -1,6 +1,3 @@
-// server.js
-import path from "path";
-import express from "express";
 import app from "./app.js"; // Import the Express app from app.js
 import cloudinary from "cloudinary"; // Import cloudinary here
 
@@ -11,16 +8,7 @@ cloudinary.v2.config({
   api_secret: process.env.CLOUDINARY_CLIENT_SECRET,
 });
 
-// Define the directory path
-const __dirname = path.resolve();
 
-// Serve static files
-app.use(express.static(path.join(__dirname, "frontend", "dist")));
-
-// Wildcard route for client-side routing
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
-});
 
 // Start the server
 app.listen(process.env.PORT, () => {

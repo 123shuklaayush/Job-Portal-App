@@ -17,7 +17,7 @@ config({ path: "./config/config.env" });
 
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://job-portal-app-chi.vercel.app',
     method: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })

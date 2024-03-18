@@ -15,9 +15,11 @@ config({ path: "./config/config.env" });
 
 
 
-app.use(
-  cors()
-);
+app.use(cors({
+  origin: ["http://localhost:5173", "https://job-portal-app-zlg3.onrender.com"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true // Allow credentials (cookies, authorization headers, etc.)
+}));
 
 app.use(cookieParser());
 app.use(express.json());
